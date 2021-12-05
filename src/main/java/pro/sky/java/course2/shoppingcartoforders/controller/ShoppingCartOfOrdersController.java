@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pro.sky.java.course2.shoppingcartoforders.domain.Product;
 import pro.sky.java.course2.shoppingcartoforders.service.ShoppingCartOfOrdersService;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -20,12 +19,12 @@ public class ShoppingCartOfOrdersController {
     }
 
     @GetMapping("/add")
-    public void addProductToCart(@RequestParam List<Integer> productId) {
-        shoppingCartService.addProductToCart(productId);
+    public List<Integer> addProductToCart(@RequestParam List<Integer> ids) {
+        return shoppingCartService.addProductToCart(ids);
     }
 
     @GetMapping("/get")
-    public Collection<Product> getShoppingCartOfOrders() {
+    public List<Product> getShoppingCartOfOrders() {
         return shoppingCartService.getShoppingCartOfOrders();
     }
 }
