@@ -3,14 +3,14 @@ package pro.sky.java.course2.shoppingcartoforders.domain;
 import java.util.Objects;
 
 public class Product {
-    private final int productId;
+    private final int id;
 
-    public Product(int productId) {
-        this.productId = productId;
+    public Product(int id) {
+        this.id = id;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -18,18 +18,18 @@ public class Product {
         if (this == o) return true;
         if (!(o instanceof Product)) return false;
         Product product = (Product) o;
-        return productId == product.productId;
+        return id == product.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "productId=" + productId +
+                "id=" + id +
                 '}';
     }
 }
