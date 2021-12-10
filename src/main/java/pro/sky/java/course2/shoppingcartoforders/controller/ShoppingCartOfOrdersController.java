@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pro.sky.java.course2.shoppingcartoforders.domain.Product;
 import pro.sky.java.course2.shoppingcartoforders.service.ShoppingCartOfOrdersService;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -24,7 +25,7 @@ public class ShoppingCartOfOrdersController {
     }
 
     @GetMapping("/get")
-    public List<Product> getShoppingCartOfOrders() {
+    public Collection<Product> getShoppingCartOfOrders() {
         return shoppingCartService.getShoppingCartOfOrders();
     }
 }

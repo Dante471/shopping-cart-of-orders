@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import pro.sky.java.course2.shoppingcartoforders.domain.Order;
 import pro.sky.java.course2.shoppingcartoforders.domain.Product;
 
-import java.util.Collections;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -26,8 +26,8 @@ public class ShoppingCartOfOrdersServiceImpl implements ShoppingCartOfOrdersServ
     }
 
     @Override
-    public List<Product> getShoppingCartOfOrders() {
-        return Collections.unmodifiableList(order.get());
+    public Collection<Product> getShoppingCartOfOrders() {
+        return order.get();
     }
 
 }
